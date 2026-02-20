@@ -1,6 +1,6 @@
 ---
 title: Shagun
-category: Metal Almirahs
+category: metal-almirahs
 featured: true
 tags: product
 permalink: false
