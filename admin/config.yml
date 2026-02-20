@@ -9,37 +9,38 @@ collections:
 
   # PRODUCTS
   - name: "products"
-  label: "Products"
-  folder: "products"
-  create: true
-  slug: "{{slug}}"
-  fields:
-    - { label: "Product Name", name: "title", widget: "string" }
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
 
-    - label: "Category"
-      name: "category"
-      widget: "relation"
-      collection: "categories"
-      search_fields: ["title"]
-      value_field: "{{slug}}"
-      display_fields: ["title"]
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "categories"
+        search_fields: ["title"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
 
-    - { label: "MRP", name: "mrp", widget: "number" }
+      - { label: "MRP", name: "mrp", widget: "number" }
 
-    - { label: "Short Description", name: "short_description", widget: "text" }
+      - { label: "Short Description", name: "short_description", widget: "text" }
 
-    - { label: "Full Description", name: "body", widget: "markdown" }
+      - { label: "Full Description", name: "body", widget: "markdown" }
 
-    - { label: "Featured Product", name: "featured", widget: "boolean", default: false }
+      - { label: "Featured Product", name: "featured", widget: "boolean", default: false }
 
-    - { label: "Tags", name: "tags", widget: "hidden", default: "product" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: ["product"] }
 
-    - { label: "Permalink", name: "permalink", widget: "hidden", default: false }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: false }
 
-    - label: "Images"
-      name: "images"
-      widget: "list"
-      field: { label: Image, name: image, widget: image }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        field:
+          { label: "Image", name: "image", widget: "image" }
 
   # CATEGORIES
   - name: "categories"
