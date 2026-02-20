@@ -1,0 +1,90 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+
+  # PRODUCTS
+  - name: "products"
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "MRP", name: "mrp", widget: "number" }
+      - { label: "Short Description", name: "short_description", widget: "text" }
+      - { label: "Full Description", name: "body", widget: "markdown" }
+
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        field:
+          { label: "Feature", name: "feature", widget: "string" }
+
+      - label: "Specifications"
+        name: "specifications"
+        widget: "list"
+        fields:
+          - { label: "Spec Title", name: "spec_title", widget: "string" }
+          - { label: "Spec Value", name: "spec_value", widget: "string" }
+
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        field:
+          { label: "Image", name: "image", widget: "image" }
+
+  # CATEGORIES
+  - name: "categories"
+    label: "Categories"
+    folder: "categories"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - { label: "Category Name", name: "title", widget: "string" }
+      - { label: "Category Description", name: "description", widget: "text" }
+      - { label: "Category Banner", name: "banner", widget: "image" }
+
+  # HOMEPAGE
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "_data/homepage.yml"
+        label: "Homepage Content"
+        name: "homepage"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+
+  # DEALER PAGE
+  - name: "dealer"
+    label: "Dealer Page"
+    files:
+      - file: "_data/dealer.yml"
+        label: "Dealer Content"
+        name: "dealer"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+
+  # FOOTER
+  - name: "footer"
+    label: "Footer"
+    files:
+      - file: "_data/footer.yml"
+        label: "Footer Content"
+        name: "footer"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
