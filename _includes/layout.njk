@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TurboCare",
+  "url": "https://turbocare.co.in",
+  "logo": "https://turbocare.co.in/images/logow.png"
+}
+</script>
+<meta name="description" content="TurboCare - Premium coolers, LED TVs, metal almirahs and speakers across India.">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/images/logow.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "TurboCare" }}</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="bg-gray-950 text-white">
+
+  {{ content | safe }}
+
+  <script src="/script.js"></script>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+<a href="https://wa.me/918279782770"
+   target="_blank"
+   style="position:fixed;bottom:20px;right:20px;
+          background:#25D366;color:white;
+          padding:14px 18px;border-radius:50px;
+          font-weight:bold;z-index:999;">
+   WhatsApp
+</a>
+
+</body>
+</html>
