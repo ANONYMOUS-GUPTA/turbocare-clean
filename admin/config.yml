@@ -9,37 +9,37 @@ collections:
 
   # PRODUCTS
   - name: "products"
-    label: "Products"
-    folder: "products"
-    create: true
-    slug: "{{slug}}"
-    format: "frontmatter"
-    extension: "md"
-    fields:
-      - { label: "Product Name", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "MRP", name: "mrp", widget: "number" }
-      - { label: "Short Description", name: "short_description", widget: "text" }
-      - { label: "Full Description", name: "body", widget: "markdown" }
+  label: "Products"
+  folder: "products"
+  create: true
+  slug: "{{slug}}"
+  fields:
+    - { label: "Product Name", name: "title", widget: "string" }
 
-      - label: "Features"
-        name: "features"
-        widget: "list"
-        field:
-          { label: "Feature", name: "feature", widget: "string" }
+    - label: "Category"
+      name: "category"
+      widget: "relation"
+      collection: "categories"
+      search_fields: ["title"]
+      value_field: "{{slug}}"
+      display_fields: ["title"]
 
-      - label: "Specifications"
-        name: "specifications"
-        widget: "list"
-        fields:
-          - { label: "Spec Title", name: "spec_title", widget: "string" }
-          - { label: "Spec Value", name: "spec_value", widget: "string" }
+    - { label: "MRP", name: "mrp", widget: "number" }
 
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        field:
-          { label: "Image", name: "image", widget: "image" }
+    - { label: "Short Description", name: "short_description", widget: "text" }
+
+    - { label: "Full Description", name: "body", widget: "markdown" }
+
+    - { label: "Featured Product", name: "featured", widget: "boolean", default: false }
+
+    - { label: "Tags", name: "tags", widget: "hidden", default: "product" }
+
+    - { label: "Permalink", name: "permalink", widget: "hidden", default: false }
+
+    - label: "Images"
+      name: "images"
+      widget: "list"
+      field: { label: Image, name: image, widget: image }
 
   # CATEGORIES
   - name: "categories"
