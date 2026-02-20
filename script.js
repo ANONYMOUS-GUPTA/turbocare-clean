@@ -99,3 +99,21 @@ window.addEventListener("scroll", function () {
     header.classList.remove("bg-gray-950", "shadow-lg");
   }
 });
+
+// Fade-in on scroll
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOnScroll = new IntersectionObserver(
+  function (entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    });
+  },
+  { threshold: 0.2 }
+);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
