@@ -1,0 +1,11 @@
+{
+  "name": "turbocare-website",
+  "version": "1.0.0",
+  "description": "TurboCare Brand Website",
+  "scripts": {
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

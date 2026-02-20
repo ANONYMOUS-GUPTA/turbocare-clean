@@ -1,0 +1,29 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://turbocare.co.in/</loc>
+  </url>
+
+  <url>
+    <loc>https://turbocare.co.in/dealer/</loc>
+  </url>
+
+  {% for product in collections.products %}
+  <url>
+    <loc>https://turbocare.co.in/products/{{ product.fileSlug }}/</loc>
+  </url>
+  {% endfor %}
+
+  {% for category in collections.categories %}
+  <url>
+    <loc>https://turbocare.co.in/categories/{{ category.fileSlug }}/</loc>
+  </url>
+  {% endfor %}
+
+</urlset>

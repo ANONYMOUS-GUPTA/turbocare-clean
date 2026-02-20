@@ -1,0 +1,71 @@
+---
+layout: layout.njk
+pagination:
+  data: collections.products
+  size: 1
+  alias: product
+permalink: "products/{{ product.fileSlug }}/index.html"
+title: "{{ product.data.title }} | TurboCare"
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.data.title }}",
+  "image": "{% if product.data.images and product.data.images.length > 0 %}{{ product.data.images[0] }}{% endif %}",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "{{ product.data.mrp }}"
+  }
+}
+</script>
+<section class="py-20 px-6 max-w-5xl mx-auto text-white">
+
+  <h1 class="text-4xl font-bold mb-6 text-blue-400">
+    {{ product.data.title }}
+  </h1>
+
+  <p class="text-xl mb-4">
+    MRP: ₹{{ product.data.mrp }}
+  </p>
+
+  {% if product.templateContent %}
+<div class="mb-8 text-gray-300">
+  {{ product.templateContent | safe }}
+</div>
+{% endif %}
+
+  <!-- Images -->
+  {% if product.data.images %}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    {% for image in product.data.images %}
+      <img src="{{ image }}" class="rounded-xl shadow-lg">
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Features -->
+  {% if product.data.features %}
+  <h2 class="text-2xl font-semibold mb-4">Features</h2>
+  <ul class="list-disc list-inside mb-8 text-gray-400">
+    {% for feature in product.data.features %}
+      <li>{{ feature }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <!-- Specifications -->
+  {% if product.data.specifications %}
+  <h2 class="text-2xl font-semibold mb-4">Specifications</h2>
+  <div class="space-y-2 text-gray-400">
+    {% for spec in product.data.specifications %}
+      <div class="flex justify-between border-b border-gray-700 py-2">
+        <span>{{ spec.spec_title }}</span>
+        <span>{{ spec.spec_value }}</span>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</section>

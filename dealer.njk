@@ -1,0 +1,34 @@
+---
+layout: layout.njk
+permalink: "dealer/index.html"
+---
+
+<section class="py-20 px-6 max-w-4xl mx-auto text-white text-center">
+
+  <h1 class="text-4xl font-bold mb-6 text-blue-400">
+    {{ dealer.title }}
+  </h1>
+
+  <p class="text-gray-300 mb-10">
+    {{ dealer.description }}
+  </p>
+
+  <form name="dealer-inquiry"
+      method="POST"
+      data-netlify="true"
+      class="bg-gray-900 p-8 rounded-2xl space-y-6">
+
+  <input type="hidden" name="form-name" value="dealer-inquiry">
+
+  <input type="text" name="name" placeholder="Dealer Name" required class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="text" name="city" placeholder="City" required class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="email" name="email" placeholder="Email" required class="w-full p-3 rounded bg-gray-800 text-white">
+  <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 rounded bg-gray-800 text-white">
+
+  <button type="submit" class="bg-blue-500 px-6 py-3 rounded-full">
+    Submit Inquiry
+  </button>
+
+</form>
+
+</section>
