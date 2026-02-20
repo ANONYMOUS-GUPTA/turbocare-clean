@@ -375,5 +375,6 @@ main ul {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  opacity: 0.6;   /* lower opacity */
+  z-index: 0;
 }
