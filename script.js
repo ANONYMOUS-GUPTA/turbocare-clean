@@ -88,3 +88,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
+// Navbar shrink effect
+window.addEventListener("scroll", function () {
+  const header = document.getElementById("main-header");
+  if (window.scrollY > 50) {
+    header.classList.add("bg-gray-950", "shadow-lg");
+  } else {
+    header.classList.remove("bg-gray-950", "shadow-lg");
+  }
+});
