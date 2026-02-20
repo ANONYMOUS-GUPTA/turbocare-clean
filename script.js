@@ -1,14 +1,17 @@
 // Mobile Menu Toggle
+// Mobile Menu Toggle
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuOpen = document.getElementById('menu-open');
 const menuClose = document.getElementById('menu-close');
 
-menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('active');
-  menuOpen.classList.toggle('hidden');
-  menuClose.classList.toggle('hidden');
-});
+if (menuBtn && mobileMenu && menuOpen && menuClose) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    menuOpen.classList.toggle('hidden');
+    menuClose.classList.toggle('hidden');
+  });
+}
 
 // Sticky shadow effect on scroll
 const header = document.getElementById('main-header');
@@ -25,19 +28,21 @@ const carousel = document.getElementById('carousel');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
-prevBtn.addEventListener('click', () => {
-  carousel.scrollBy({
-    left: -300, // adjust based on card width + gap
-    behavior: 'smooth'
+if (carousel && prevBtn && nextBtn) {
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({
+      left: -300,
+      behavior: 'smooth'
+    });
   });
-});
 
-nextBtn.addEventListener('click', () => {
-  carousel.scrollBy({
-    left: 300,
-    behavior: 'smooth'
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({
+      left: 300,
+      behavior: 'smooth'
+    });
   });
-});
+}
 const lifestyleCards = document.querySelectorAll('.lifestyle-card');
 const productCards = document.querySelectorAll('.product-card');
 const showAllBtn = document.getElementById('show-all-btn');
@@ -60,13 +65,18 @@ lifestyleCards.forEach(card => {
 });
 
 // Show all products
-showAllBtn.addEventListener('click', () => {
-  productCards.forEach(product => {
-    product.style.display = 'flex';
+if (showAllBtn) {
+  showAllBtn.addEventListener('click', () => {
+    productCards.forEach(product => {
+      product.style.display = 'flex';
+    });
+
+    const featured = document.getElementById('featured-products');
+    if (featured) {
+      featured.scrollIntoView({ behavior: 'smooth' });
+    }
   });
-  
-  document.getElementById('featured-products').scrollIntoView({ behavior: 'smooth' });
-});
+}
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("newsletterForm");
   const responseMessage = document.getElementById("responseMessage");
