@@ -2,7 +2,8 @@
 title: Shagun
 category: metal-almirahs
 featured: true
-tags: product
+tags:
+  - product
 permalink: false
 mrp: 18000
 short_description: |
@@ -19,4 +20,3 @@ specifications:
 images:
   - /images/uploads/1000623483.jpg
 ---
-1.
