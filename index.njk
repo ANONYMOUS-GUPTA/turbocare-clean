@@ -53,22 +53,22 @@ title: TurboCare
 
     
     <!-- Hero Section -->
-   <section class="relative bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white py-16 md:py-24 fade-in">
+  <section id="hero" class="relative overflow-hidden text-white py-20">
+  
+  <!-- Parallax Background -->
+  <div class="parallax-bg absolute inset-0"></div>
 
-  <div class="max-w-6xl mx-auto px-6 flex flex-col items-center text-center space-y-8">
+  <div class="relative z-10 max-w-6xl mx-auto px-6 flex flex-col items-center text-center space-y-8">
 
-    <!-- Hero Image -->
     {% if homepage.hero_image %}
     <img 
       src="{{ homepage.hero_image }}" 
       alt="TurboCare Products"
-      class="w-72 md:w-96 rounded-2xl shadow-2xl hero-float"
-      loading="eager">
+      class="w-72 md:w-96 rounded-2xl shadow-2xl hero-float">
     {% endif %}
 
-    <!-- Hero Text -->
     <div class="space-y-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+      <h1 class="text-4xl md:text-6xl font-extrabold">
         {{ homepage.hero_title }}
       </h1>
 
@@ -77,9 +77,8 @@ title: TurboCare
       </p>
     </div>
 
-    <!-- Button -->
     <a href="#products"
-       class="bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition transform hover:scale-105">
+       class="cta-btn bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg">
        Explore Products
     </a>
 
