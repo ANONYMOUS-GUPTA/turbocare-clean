@@ -1,6 +1,9 @@
 ---
 title: Shagun
 category: Metal Almirahs
+featured: true
+tags: product
+permalink: false
 mrp: 18000
 short_description: |
   Weight : 48Kg
